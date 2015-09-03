@@ -16,21 +16,26 @@
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
+					<h4 class="navbar-text" id='color'></h4>
 					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-user"></strong> Sign in</button></a>
 				</div>
 			</nav>
 		</div>
 		<div class="row">
-			<h3>Sign In</h3>
-			<form method='post' action='#'>
-				<input type='text' name='email' placeholder='Email id'><br>
-				<input type='password' name='password' placeholder='Password'>
-				<input type='hidden' name='hidden' value='signin'><br>
-				<button type='submit' class="btn btn-info">Sign In</button>
-			</form>
+			<div class="col-md-3">
+				<form method='post' action='#'>
+					<input type='email' name='email' placeholder='Email id'><br>
+					<input type='text' name='first_name' placeholder='First Name'><br>
+					<input type='text' name='last_name' placeholder='Last Name'><br>
+					<input type='password' name='password' placeholder='Password'><br>	
+					<input type='password' name='cpassword' placeholder='Confirm Password'><br>
+					<button class="btn btn-info pull-left" type='submit'>Register</button><br>	
+					<input type='hidden' name='hidden' value='registration'><br>
+				</form>
+			</div>
 		</div>
 		<div class="row">
-			<a href="/main/register">Dont have an account? Click here!!</a>
+			<a href="/main/signin">Already have an account? Click Here !!</a>
 		</div>
 	</div>
 </body>

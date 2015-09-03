@@ -16,6 +16,10 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('signin');
 	}
+	public function register()
+	{
+		$this->load->view('register');
+	}
 }
 
 //end of main controller
