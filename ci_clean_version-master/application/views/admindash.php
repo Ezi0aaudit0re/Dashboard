@@ -24,7 +24,10 @@
 		</div>
 		<div class="row">
 			<div class="panel panel-default">
-				 <div class="panel-heading">Manage users</div>
+				 <div class="panel-heading">
+				 	Manage users
+				 	<a href='#'><button type="button" class="btn btn-info pull-right" id='addnew'><strong class="glyphicon glyphicon-user"></strong> Add new</button></a>
+				 </div>
 				 <div class="panel-body">
 				  	<p>Here the admin can add and remove users</p>
 				</div>
