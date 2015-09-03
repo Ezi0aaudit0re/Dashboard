@@ -10,7 +10,7 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admindash');
+		$this->load->view('normaldash');
 	}
 	public function signin()
 	{
