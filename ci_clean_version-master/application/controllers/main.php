@@ -28,6 +28,10 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('admindash');
 	}
+	public function editprofile()
+	{
+		$this->load->view('editprofile');
+	}
 }
 
 //end of main controller
