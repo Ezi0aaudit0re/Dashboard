@@ -2,11 +2,7 @@ textarea{
 	width: 100%;
 }
 
-img{
-	position: relative;
-	bottom: 500px;
-	left: 380px;
-}
+
 
 #color{
 	color: #5bc0de;
@@ -14,8 +10,16 @@ img{
 input{
 	padding: 8px;
 	margin: 4px;
+	width: 300px;
 }
 
 button{
 	margin: 7px;
+}
+
+#password{
+	margin-right: 50px;
+}
+#editinfo{
+	margin-left: 50px;
 }

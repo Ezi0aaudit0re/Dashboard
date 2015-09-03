@@ -68,6 +68,5 @@
 			</div>
 		</div>
 	</div>
-	<img src="http://www.gettyimages.com/CMS/Pages/EditFrontdoor/StaticContent/Edit_logo.jpg" alt='edit image'>
 </body>
 </html>
