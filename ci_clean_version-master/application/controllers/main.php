@@ -12,6 +12,10 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+	public function signin()
+	{
+		$this->load->view('signin');
+	}
 }
 
 //end of main controller

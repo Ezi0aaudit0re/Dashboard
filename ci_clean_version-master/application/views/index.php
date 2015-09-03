@@ -11,12 +11,12 @@
 				<div class="container-fluid">
 					<div class="navbar-header ">
 						<a class="navbar-brand" href"/main/index">
-							<strong class="glyphicon glyphicon-tasks" id='color'></strong>
+							<strong class="glyphicon glyphicon-home" id='color'></strong>
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
 					<h4 class="navbar-text" id='color'></h4>
-					<a href='#'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-user"></strong> Sign in</button></a>
+					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-user"></strong> Sign in</button></a>
 				</div>
 			</nav>
 		</div>
