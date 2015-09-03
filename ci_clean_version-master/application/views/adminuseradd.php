@@ -1,9 +1,9 @@
 <html>
 <head>
 	<meta charset='utf-8'>
+	<title>Add user by admin</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="/assets/admindash.css">
-	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/assets/signin.css">
 </head>
 <body>
 	<div class="container">
@@ -23,37 +23,17 @@
 			</nav>
 		</div>
 		<div class="row">
-			<div class="panel panel-default">
-				 <div class="panel-heading">
-				 	Manage users
-				 	<a href='/main/adminadduser'><button type="button" class="btn btn-info pull-right" id='addnew'><strong class="glyphicon glyphicon-user"></strong> Add new</button></a>
-				 </div>
-				 <div class="panel-body">
-				  	<p>Here the admin can add and remove users</p>
-				</div>
-				<table class='table table-hover'>
-					<thead>
-						<tr class='info'>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Created at</th>
-							<th>User_level</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="warning">
-							<td>1</td>
-							<td>Aman</td>
-							<td>amannagpal4@gmail.com</td>
-							<td>12,12,12</td>
-							<td>admin</td>
-							<td>edit remove</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>	
+			<a href="/main/admindash"><button type='button' class="btn btn-info pull-right">Return to Dashboard</button></a>
+			<h3>Add a new user</h3>
+			<form method='post' action='#'>
+				<input type='email' name='email' placeholder='Email id'><br>
+					<input type='text' name='first_name' placeholder='First Name'><br>
+					<input type='text' name='last_name' placeholder='Last Name'><br>
+					<input type='password' name='password' placeholder='Password'><br>	
+					<input type='password' name='cpassword' placeholder='Confirm Password'><br>
+					<button class="btn btn-info pull-left" type='submit'>Create</button><br>	
+					<input type='hidden' name='hidden' value='registration'><br>
+			</form>
 		</div>
 	</div>
 </body>

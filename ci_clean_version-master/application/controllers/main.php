@@ -20,6 +20,14 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('register');
 	}
+	public function adminadduser()
+	{
+		$this->load->view('adminuseradd');
+	}
+	public function admindash()
+	{
+		$this->load->view('admindash');
+	}
 }
 
 //end of main controller
