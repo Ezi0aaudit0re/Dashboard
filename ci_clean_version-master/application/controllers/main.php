@@ -85,6 +85,11 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('editprofile', array('sucess' => $this->session->flashdata('sucess')));
 	}
+	public function editpassword()
+	{
+		$this->load->model('user');
+		$this->user->editpassword();	
+	}
 
 }
 

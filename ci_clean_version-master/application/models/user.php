@@ -66,5 +66,20 @@ class user extends CI_Model
 		$this->session->set_flashdata('sucess', 'Information was sucessfully updated');
 		redirect('/main/updatesucess');
 	}
+	public function editpassword()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('password', 'Password', 'matches[cpassword]');
+		if($this->form_validation->run()==TRUE)
+		{
+			$info = $this->input->post();
+			$id = $this->session->userdata('info');
+			$query = "UPDATE users SET password = ? WHERE id=?";
+			$value = array($info['password'], $id['id']);
+			$this->db->query($query, $value);
+			$this->session->set_flashdata('sucess', 'Information was sucessfully updated');
+			redirect('/main/updatesucess');
+		}
+	}
 }
 ?>

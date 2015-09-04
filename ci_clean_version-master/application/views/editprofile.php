@@ -54,7 +54,7 @@
 				    	<h3 class="panel-title">Edit Information</h3>
 				  </div>
 				  <div class="panel-body">
-				  	<form>
+				  	<form method='post' action='/main/editpassword'>
 						<input type='password' name='password' placeholder='Password'><br>
 						<input type='password' name='cpassword' placeholder='Confirm Password'><br>
 						<a href="#"><button class="btn btn-info"><strong class="glyphicon glyphicon-floppy-save"></strong> Update Password</button></a>
