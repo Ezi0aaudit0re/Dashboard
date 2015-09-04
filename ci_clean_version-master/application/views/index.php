@@ -27,7 +27,7 @@
 			<div class="col-md-12">
 				<h1>Welcome to the test</h1>
 				<p>We are going to build a cool application using a MVC framework called CodeIgnitor!</p>
-				<a href="#"><button type="button" class="btn btn-info navbar-btn pull-left"><strong class="glyphicon glyphicon-pencil"></strong> Start</button></a>
+				<a href="/main/signin"><button type="button" class="btn btn-info navbar-btn pull-left"><strong class="glyphicon glyphicon-pencil"></strong> Start</button></a>
 			</div>
 		</div>
 		<div class="row">
@@ -47,6 +47,3 @@
 	</div>
 </body>
 </html>
-<?php
-shell_exec('say {Hello friend}')
-?>

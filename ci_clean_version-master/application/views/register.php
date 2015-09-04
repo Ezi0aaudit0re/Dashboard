@@ -24,7 +24,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<form method='post' action='#'>
+				<form method='post' action='/register'>
 					<input type='email' name='email' placeholder='Email id'><br>
 					<input type='text' name='first_name' placeholder='First Name'><br>
 					<input type='text' name='last_name' placeholder='Last Name'><br>
@@ -41,6 +41,3 @@
 	</div>
 </body>
 </html>
-<?php
-shell_exec('say {Headed to registration page}')
-?>

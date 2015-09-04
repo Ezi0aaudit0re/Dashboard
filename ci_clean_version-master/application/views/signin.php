@@ -36,6 +36,3 @@
 	</div>
 </body>
 </html>
-<?php
-shell_exec('say {Headed to the sign in page}')
-?>

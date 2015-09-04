@@ -13,9 +13,9 @@ if(ENVIRONMENT == 'production')
 else
 {
 	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = '';
-	$db['default']['password'] = '';
-	$db['default']['database'] = '';
+	$db['default']['username'] = 'root';
+	$db['default']['password'] = 'root';
+	$db['default']['database'] = 'wallCI';
 }
 
 $db['default']['dbdriver'] = 'mysql';
