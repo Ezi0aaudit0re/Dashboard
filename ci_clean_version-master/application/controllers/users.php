@@ -44,6 +44,17 @@ class users extends CI_Controller
 		$this->user->users($info);
 		redirect('/main/adminsucess');
 	}
+	public function message()
+	{
+		$this->load->model('user');
+		$this->user->addmessage($this->input->post());
+	}
+	public function comments($messageid)
+	{
+
+		$this->load->model('user');
+		$this->user->addcomment($messageid, $this->input->post());
+	}
 }
 
 ?>

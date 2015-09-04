@@ -44,29 +44,82 @@
 		<div class="row" id='message'>
 			<div class="panel panel-info">
 			  	<div class="panel-heading">
-			   		 <h3 class="panel-title">Leave a message for Aman Nagpal</h3>
+			   		 <h3 class="panel-title">Leave a message for <?= $info['first_name'] . " " . $info['last_name']?></h3>
 			  	</div>
-			  	<div class="panel-body">
+			  	<div class="panel-body" >			  		
 			    	<div class="form-group">
- 						<textarea class="form-control" rows="5" id="comment" placeholder="please enter a message"></textarea>
-					</div>
-					<button type='submit' class="btn btn-success pull-right">Post</button>
+ 						<textarea class="form-control" form='usrform' rows="5" id="comment" placeholder="please enter a message" name='message'></textarea><br>						
+						<form method='post' action='/message' id='usrform'>
+							<input type='submit' value='Post' class="btn btn-success pull-right">
+						</form>
+					</div>					
 				</div>
 			</div>	
 		</div>
 		<hr>
-		<div class="row col-md-10 pull-right">
+		<?php foreach ($message as $value) {
+		?>
 			<div class="panel panel-info">
+  				<div class="panel-heading">
+  					<?php 
+  						echo "<h5>{$value['first_name']} {$value['last_name']} wrote";
+  						echo "<h5 id='time'>{$value['created_at']}";
+  					?>
+  				</div>
+  				<div class="panel-body">
+   					 <p><?= "<h4>{$value['message']}</h4>"?></p>
+  				</div>
+			  <ul class="list-group">
+			  	<?php
+			  		foreach ($comment as $values)
+			  		{
+			  			if($value['id'] == $values['messages_id'])
+			  			{
+			  				echo "<li class='list-group-item'><h5>{$values['first_name']} {$values['last_name']} wrote <span class='pull-right'> {$values['created_at']}</span></h5>{$values['comment']}</li>";
+			  			}
+			  		}
+			  	?> 
+			    <li class="list-group-item">
+			    	<div class="form-group">
+ 						<form method='post' action="/comment/<?=$value['id']?>">
+ 								<textarea class="form-control"  rows="2" placeholder="please enter a comment" name='comment'></textarea><br>
+							<input type='submit' value='Post' class="btn btn-success pull-right">
+						</form>
+					</div>
+					<br>	
+			    </li>
+			  </ul>
+			</div>
+			<?php } ?>
+		<!-- <div class="row col-md-10 pull-right">
+			<?php
+					
+				?>
+			<div class="panel panel-info">
+				
 			  	<div class="panel-heading">
-			   		 <h3 class="panel-title">message</h3>
+			   		 <h3 class="panel-title">
+			   			
+			   		 	<?php
+			   		 		
+			   		 		
+			   		 		
+			   		 	;?>
+			   		 	
+			   		</h3>
 			  	</div>
 			  	<div class="panel-body">
-			    COMMENT
+			    	<div class="form-group">
+ 						<textarea class="form-control" form='usrform' rows="3" id="comment" placeholder="please enter a comment" name='comment'></textarea><br>						
+						<form method='post' action='/comment' id='usrform'>
+							<input type='submit' value='Comment' class="btn btn-warning pull-right">
+						</form>
+					</div>
+			    
 				</div>
 			</div>	
+		</div> -->
 		
-
-		</div>
 	</div>
 </body>
 

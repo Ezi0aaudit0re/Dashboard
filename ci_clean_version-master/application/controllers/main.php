@@ -5,7 +5,7 @@ class Main extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->output->enable_profiler();
+		
 	}
 
 	public function index()
@@ -34,7 +34,12 @@ class Main extends CI_Controller {
 	}
 	public function wall()
 	{
-		$this->load->view('wall', array('info' => $this->session->userdata('info')));
+		$this->load->model('user');
+		$message=$this->user->getmessage();
+		$comment= $this->user->getcomments();
+		$this->load->view('wall', array('info' => $this->session->userdata('info'),
+										'message'=> $message,
+										 'comment'=>$comment));
 	}
 	public function signinerror()
 	{

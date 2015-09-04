@@ -75,11 +75,37 @@ class user extends CI_Model
 			$info = $this->input->post();
 			$id = $this->session->userdata('info');
 			$query = "UPDATE users SET password = ? WHERE id=?";
-			$value = array($info['password'], $id['id']);
+			$value = array(md5($info['password']), $id['id']);
 			$this->db->query($query, $value);
 			$this->session->set_flashdata('sucess', 'Information was sucessfully updated');
 			redirect('/main/updatesucess');
 		}
+	}
+	public function addmessage($message)
+	{
+		// var_dump($message);
+		$id= $this->session->userdata('info');
+		$query = "INSERT INTO messages (message, created_at, users_id) VALUES (?, NOW(), ?)";
+		$values= array($message['message'], $id['id']);
+		$this->db->query($query, $values);
+		redirect('/main/wall');
+	}
+	public function getmessage()
+	{
+		return $this->db->query('SELECT users.first_name, users.last_name, messages.id, messages.message, messages.created_at FROM users LEFT JOIN messages ON users.id= messages.users_id')->result_array();
+	}
+	public function addcomment($messageid, $comment)
+	{	
+		$userid=$this->session->userdata('info');
+		// echo $userid['id'];
+		$query = "INSERT INTO comments (comment, created_at, messages_id, users_id) VALUES (?, NOW(), ?, ?)";
+		$values= array($comment['comment'], $messageid, $userid['id']);
+		$this->db->query($query, $values);
+		redirect('/main/wall');
+	}
+	public function getcomments()
+	{
+		return $this->db->query('SELECT users.first_name, users.last_name, comments.comment, comments.created_at, comments.messages_id FROM users LEFT JOIN comments ON users.id= comments.users_id')->result_array();
 	}
 }
 ?>

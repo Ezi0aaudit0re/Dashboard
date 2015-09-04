@@ -6,5 +6,7 @@ $route['register'] = 'users/register';
 $route['signin'] = 'users/signin';
 $route['dashboard'] = 'users/dashboard';
 $route['adduser'] = 'users/adduserbyadmin';
+$route['message'] = 'users/message';
+$route['comment/(:any)'] = 'users/comments/$1';
 
 //end of routes.php
