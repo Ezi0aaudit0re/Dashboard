@@ -21,9 +21,17 @@
 				</div>
 			</nav>
 		</div>
+		<?php
+		if(isset($error) && $error == true)
+		{
+			echo "<div class='alert alert-danger'>
+  					 $error
+				  </div>";
+		}	
+		?>
 		<div class="row">
 			<h3>Sign In</h3>
-			<form method='post' action='#'>
+			<form method='post' action='/signin'>
 				<input type='text' name='email' placeholder='Email id'><br>
 				<input type='password' name='password' placeholder='Password'>
 				<input type='hidden' name='hidden' value='signin'><br>

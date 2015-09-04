@@ -16,5 +16,18 @@ class user extends CI_Model
 			$this->db->query('UPDATE users SET type = ? WHERE id = ?', array('user', $check['id']));
 		}
 	}
+	public function signin($info)
+	{
+		$query = $this->db->query('SELECT * FROM users WHERE email = ? AND password = ?', array($info['email'], $info['password']))->row_array();
+		if($query == null)
+		{
+			$this->session->set_flashdata('error', 'Email and password doesnot exist');
+			redirect('/main/signinerror');
+		}
+		else
+		{
+			echo "user found";
+		}
+	}
 }
 ?>

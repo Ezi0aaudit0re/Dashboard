@@ -4,8 +4,10 @@
 input{
 	padding: 8px;
 	margin: 4px;
+	width: 250px;
 }
 
 button{
 	margin: 7px;
+	width: 100px;
 }

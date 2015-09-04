@@ -36,7 +36,14 @@ class Main extends CI_Controller {
 	// {
 	// 	$this->load->view()
 	// }
-	
+	public function signinerror()
+	{
+		$this->load->view('signin', array('error' => $this->session->flashdata('error')));
+	}
+	public function registererror()
+	{
+		$this->load->view('register', array('error' => $this->session->flashdata('error')));
+	}
 }
 
 //end of main controller

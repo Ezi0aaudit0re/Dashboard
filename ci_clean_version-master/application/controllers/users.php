@@ -19,8 +19,17 @@ class users extends CI_Controller
 		}
 		else
 		{
-			echo "form not validated";
+			$this->session->set_flashdata('error', 'Please enter all the correct details');
+			redirect ("/main/registererror");
 		}
+	}
+	public function signin()
+	{
+		$info['email'] = $this->input->post('email');
+		$info['password'] = md5($this->input->post('password'));
+		$this->load->model('user');
+		$this->user->signin($info);
+
 	}
 }
 

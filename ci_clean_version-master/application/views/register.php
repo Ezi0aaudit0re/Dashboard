@@ -22,13 +22,21 @@
 				</div>
 			</nav>
 		</div>
+		<?php
+			if(isset($error) && $error == true)
+			{
+				echo "<div class='alert alert-danger'>
+  						$error
+					  </div>";
+			}		
+		?>
 		<div class="row">
 			<div class="col-md-3">
 				<form method='post' action='/register'>
 					<input type='email' name='email' placeholder='Email id'><br>
 					<input type='text' name='first_name' placeholder='First Name'><br>
 					<input type='text' name='last_name' placeholder='Last Name'><br>
-					<input type='password' name='password' placeholder='Password'><br>	
+					<input type='password' name='password' placeholder='Password minimum 6 characters'><br>	
 					<input type='password' name='cpassword' placeholder='Confirm Password'><br>
 					<button class="btn btn-info pull-left" type='submit'>Register</button><br>	
 					<input type='hidden' name='hidden' value='registration'><br>
