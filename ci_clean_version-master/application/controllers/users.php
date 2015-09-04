@@ -6,7 +6,7 @@ class users extends CI_Controller
 	public function register()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique(users.email)');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|matches[cpassword]');
 		if($this->form_validation->run()==TRUE)
 		{
@@ -16,6 +16,7 @@ class users extends CI_Controller
 			$info['password'] = $this->input->post('password');
 			$this->load->model('user');
 			$this->user->users($info);
+			redirect('/main/registersucess');
 		}
 		else
 		{
@@ -30,6 +31,18 @@ class users extends CI_Controller
 		$this->load->model('user');
 		$this->user->signin($info);
 
+	}
+	public function dashboard()
+	{
+		$this->load->model('user');
+		$this->user->dashboard();
+	}
+	public function adduserbyadmin()
+	{	
+		$info = $this->input->post();
+		$this->load->model('user');
+		$this->user->users($info);
+		redirect('/main/adminsucess');
 	}
 }
 

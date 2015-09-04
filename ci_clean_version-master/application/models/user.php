@@ -15,7 +15,10 @@ class user extends CI_Model
 		{
 			$this->db->query('UPDATE users SET type = ? WHERE id = ?', array('user', $check['id']));
 		}
+		$this->session->set_flashdata('sucess', 'You have been sucessfully logged in please sigh in now');
+		
 	}
+
 	public function signin($info)
 	{
 		$query = $this->db->query('SELECT * FROM users WHERE email = ? AND password = ?', array($info['email'], $info['password']))->row_array();
@@ -26,8 +29,28 @@ class user extends CI_Model
 		}
 		else
 		{
-			echo "user found";
+			$this->session->set_userdata('info', $query);
+			redirect('/main/wall');
 		}
 	}
+	public function dashboard()
+	{
+		$info = $this->session->userdata('info');
+		
+		if($info['type'] === 'admin')
+		{
+
+			redirect('/main/adminuser');
+		}
+		else
+		{
+			redirect('/main/normaluser');
+		}
+	}
+	public function get_user()
+	{
+		return $this->db->query('SELECT id, first_name, last_name, email, created_at, type FROM users')->result_array();
+	}
+	
 }
 ?>

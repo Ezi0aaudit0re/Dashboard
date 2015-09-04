@@ -4,6 +4,11 @@
 	<title>Add user by admin</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/assets/signin.css">
+	<style type="text/css">
+		#button{
+			width: 200px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -18,14 +23,22 @@
 					<h4 class="navbar-text" id='color'>Test App</h4>
 					<h4 class="navbar-text" id='color'>Dashboard</h4>
 					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
-					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
+					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
 			</nav>
 		</div>
+		<?php
+		if(isset($sucess) && $sucess == TRUE)
+		{
+			echo "<div class='alert alert-success'>
+  						$sucess
+					  </div>";
+		}
+		?>
 		<div class="row">
-			<a href="/main/admindash"><button type='button' class="btn btn-info pull-right">Return to Dashboard</button></a>
+			<a href="/main/adminuser"><button type='button' class="btn btn-info pull-right" id='button'>Return to Dashboard</button></a>
 			<h3>Add a new user</h3>
-			<form method='post' action='#'>
+			<form method='post' action='/adduser'>
 				<input type='email' name='email' placeholder='Email id'><br>
 					<input type='text' name='first_name' placeholder='First Name'><br>
 					<input type='text' name='last_name' placeholder='Last Name'><br>

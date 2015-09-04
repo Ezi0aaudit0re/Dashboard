@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 	<meta charset='utf-8'>
@@ -18,7 +20,7 @@
 					<h4 class="navbar-text" id='color'>Test App</h4>
 					<h4 class="navbar-text" id='color'>Dashboard</h4>
 					<a href='/main/editprofile'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
-					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
+					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
 			</nav>
 		</div>
@@ -41,13 +43,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr class="warning">
-							<td>1</td>
-							<td>Aman</td>
-							<td>amannagpal4@gmail.com</td>
-							<td>12,12,12</td>
-							<td>admin</td>
-						</tr>
+						<?php
+						foreach ($info as $value)
+						{	
+							echo "<tr class='warning'>";
+							echo "<td>{$value['id']}</td>";
+							echo "<td>{$value['first_name']} {$value['last_name']}</td>";
+							echo "<td>{$value['email']}</td>";
+							echo "<td>{$value['created_at']}</td>";
+							echo "<td>{$value['type']}</td>";
+							echo "</tr>";
+						}
+
+
+						?>
 					</tbody>
 				</table>
 			</div>	

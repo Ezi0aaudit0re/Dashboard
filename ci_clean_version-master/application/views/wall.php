@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<meta charset='utf-8'>
@@ -16,6 +17,9 @@
 			padding: 1px;
 			background-color: orange;
 		}
+		li{
+			margin-left: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -29,9 +33,9 @@
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
-					<h4 class="navbar-text" id='color'>Dashboard</h4>
+					<h4 class="navbar-text" id='color'><a href="/dashboard">Dashboard</a></h4>
 					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
-					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
+					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
 			</nav>
 		</div>
@@ -42,12 +46,12 @@
 			    <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdownMenu1">
-			    <li class="dropdown-header">Name: </li>
+			    <li class="dropdown-header">Name: <?= $info['first_name'] . " " . $info['last_name'];?></li>
 			    <li class="divider"></li>
-			    <li> Registered at:</li>
-			    <li> User ID:</li>
-			    <li> Email address: </li>
-			    <li> Description: </li>
+			    <li> Registered at: <?= $info['created_at'];?></li>
+			    <li> User ID: #<?= $info['id'];?></li>
+			    <li> Email address: <?= $info['email'];?></li>
+			    <li> Description: <?= $info['description'];?></li>
 			  </ul>
 			</div>
 		</div>

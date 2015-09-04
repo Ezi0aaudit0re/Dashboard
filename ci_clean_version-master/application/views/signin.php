@@ -27,6 +27,12 @@
 			echo "<div class='alert alert-danger'>
   					 $error
 				  </div>";
+		}
+		if(isset($sucess) && $sucess == true)
+		{
+			echo "<div class='alert alert-success'>
+  					 $sucess
+				  </div>";
 		}	
 		?>
 		<div class="row">
