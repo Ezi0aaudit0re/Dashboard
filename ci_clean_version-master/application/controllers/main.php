@@ -10,7 +10,7 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('normaldash');
+		$this->load->view('wall');
 	}
 	public function signin()
 	{
@@ -32,6 +32,11 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('editprofile');
 	}
+	// public function wall()
+	// {
+	// 	$this->load->view()
+	// }
+	
 }
 
 //end of main controller
