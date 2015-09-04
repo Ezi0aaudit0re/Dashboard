@@ -6,21 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-	<style type="text/css">
-		#dropdownMenu1{
-			width: 300px;
-		}
-		#message{
-			margin-top: 50px;
-		}
-		hr{
-			padding: 1px;
-			background-color: orange;
-		}
-		li{
-			margin-left: 10px;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/assets/wall.css">
 </head>
 <body>
 	<div class="container">
@@ -33,8 +19,8 @@
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
-					<h4 class="navbar-text" id='color'><a href="/dashboard">Dashboard</a></h4>
-					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
+					<a href="/dashboard"><h4 class="navbar-text" id='color'>Dashboard</h4></a>
+					<a href='/main/editprofile'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
 					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
 			</nav>

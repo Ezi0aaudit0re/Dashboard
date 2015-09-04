@@ -1,0 +1,16 @@
+	#color{
+			color: #5bc0de;
+		}
+		#dropdownMenu1{
+			width: 300px;
+		}
+		#message{
+			margin-top: 50px;
+		}
+		hr{
+			padding: 1px;
+			background-color: orange;
+		}
+		li{
+			margin-left: 10px;
+		}

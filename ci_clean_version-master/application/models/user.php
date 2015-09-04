@@ -51,6 +51,20 @@ class user extends CI_Model
 	{
 		return $this->db->query('SELECT id, first_name, last_name, email, created_at, type FROM users')->result_array();
 	}
-	
+	public function remove($id)
+	{
+		$this->db->query('DELETE FROM users WHERE id= ?', array($id));
+	}
+	public function editemail()
+	{
+		
+		$info = $this->input->post();
+		$id = $this->session->userdata('info');
+		$query = "UPDATE users SET email = ?, first_name = ?, last_name = ? WHERE id = ?;";
+		$value = array($info['email'], $info['first_name'], $info['last_name'], $id['id']);
+		$this->db->query($query, $value);
+		$this->session->set_flashdata('sucess', 'Information was sucessfully updated');
+		redirect('/main/updatesucess');
+	}
 }
 ?>

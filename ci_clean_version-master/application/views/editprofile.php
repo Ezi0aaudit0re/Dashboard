@@ -16,12 +16,21 @@
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
-					<h4 class="navbar-text" id='color'>Dashboard</h4>
-					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
+					<a href="/dashboard"><h4 class="navbar-text" id='color'>Dashboard</h4></a>
+					<button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button>
 					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
 			</nav>
 		</div>
+		<?php
+		if(isset($sucess) && $sucess==TRUE)
+		{
+			echo "<div class='alert alert-success'>
+  						$sucess
+					  </div>";
+		}
+
+		?>
 		<div class="row pull-left" id='editinfo'>
 			<div>
 				<div class="panel panel-info">
@@ -29,7 +38,7 @@
 					    	<h3 class="panel-title">Edit Information</h3>
 					  </div>
 					  <div class="panel-body">
-					    	<form method='POST' action=''>
+					    	<form method='POST' action='/main/editemail'>
 								<input type='email' name='email' placeholder='Email address of the user'><br>
 								<input type='text' name='first_name' placeholder='First Name of the user'><br>
 								<input type='text' name='last_name' placeholder='Last Name of the user'><br>

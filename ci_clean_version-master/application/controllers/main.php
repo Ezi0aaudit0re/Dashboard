@@ -70,6 +70,22 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('adminuseradd', array('sucess', $this->session->flashdata('sucess')) );
 	}
+	public function remove($id)
+	{	
+		$this->load->model('user');
+		$this->user->remove($id);
+		redirect("/main/adminuser");
+	}
+	public function editemail()
+	{
+		$this->load->model('user');
+		$this->user->editemail();
+	}
+	public function updatesucess()
+	{
+		$this->load->view('editprofile', array('sucess' => $this->session->flashdata('sucess')));
+	}
+
 }
 
 //end of main controller

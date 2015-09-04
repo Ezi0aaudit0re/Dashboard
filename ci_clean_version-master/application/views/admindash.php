@@ -17,7 +17,7 @@
 						</a>
 					</div>
 					<h4 class="navbar-text" id='color'>Test App</h4>
-					<h4 class="navbar-text" id='color'>Dashboard</h4>
+					<a href="/dashboard"><h4 class="navbar-text" id='color'>Dashboard</h4></a>
 					<a href='/main/signin'><button type="button" class="btn btn-info navbar-btn"><strong class="glyphicon glyphicon-user"></strong> Profile</button></a>
 					<a href='/main/logoff'><button type="button" class="btn btn-info navbar-btn pull-right"><strong class="glyphicon glyphicon-off"></strong> Log Off</button></a>
 				</div>
@@ -54,7 +54,7 @@
 								echo "<td>{$value['email']} </td>";
 								echo "<td>{$value['created_at']}</td>";
 								echo "<td>{$value['type']}</td>";
-								echo "<td><a href='#'>edit</a> | <a href=''>remove</a></td>";
+								echo "<td><a href='#'>edit</a> | <a href='/main/remove/{$value['id']}'>remove</a></td>";
 								echo "</tr>";
 							}
 							
