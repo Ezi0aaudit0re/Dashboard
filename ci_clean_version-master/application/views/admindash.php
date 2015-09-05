@@ -23,6 +23,7 @@
 				</div>
 			</nav>
 		</div>
+
 		<div class="row">
 			<div class="panel panel-default">
 				 <div class="panel-heading">
@@ -54,7 +55,7 @@
 								echo "<td>{$value['email']} </td>";
 								echo "<td>{$value['created_at']}</td>";
 								echo "<td>{$value['type']}</td>";
-								echo "<td><a href='#'>edit</a> | <a href='/main/remove/{$value['id']}'>remove</a></td>";
+								echo "<td><a href='/main/remove/{$value['id']}'>remove</a></td>";
 								echo "</tr>";
 							}
 							
